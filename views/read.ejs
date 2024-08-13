@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="">
+<div id="" class="main  mt-0 w-full h-auto md:bg-gradient-to-r from-gray-900 via-black to-blue-500 bg-gradient-to-tr from-stone-900 via-indigo-900 to-fuchsia-600  border-4   px-10">
+    <!-- navbar -->
+<!-- bg-gradient-to-r from-gray-900 via-black to-blue-500 -->
+    
+    <center>
+        <div class="mt-10 md:mt-20"> 
+            <h1 class="text-2xl font-semibold text-white  capitalize md:text-4xl md:font-semibold md:text-white  md:capitalize  "> read your article </h1>
+        </div>
+        </center> 
+
+
+
+ <!-- nav bar end -->
+<% client.forEach(function(client){ %>
+    
+       
+<div id="contread" class=" mt-20 flex flex-col justify-center items-center bg-white bg-opacity-30 px-4 py-6 rounded-xl md:flex-none  md:mt-20 md:bg-black md:bg-opacity-20 md:mb-5 md:p-5 md:rounded-r-full ">
+
+    <div class="px-4 py-4 rounded-md overflow-hidden   object-center   bg-white w-[200px] h-[150px] md:px-4 md:py-4 md:rounded-md md:overflow-hidden    md:object-center  md:bg-white md:w-[500px] md:h-[295px]">
+        <img class="    w-[200px] h-[120px]  object-center object-cover rounded-md  md:w-[500px] md:h-[260px]  md:object-center md:object-cover md:rounded-md   " src="<%=client.url%>" alt="">
+    </div>
+
+
+    <div class="  w-[200px] py-2 flex justify-center  rounded-xl mt-5   bg-white   md:w-[500px] md:py-4 md:flex md:justify-center  md:rounded-xl mt-5   md:bg-white    ">
+
+        <h1 class="text-xs text-slate-800 font-bold capitalize md:text-lg md:text-slate-800 md:font-bold md:capitalize ">
+        <%=client.bio%>
+        
+        </h1>
+        </div>
+<center>
+<div class="  block w-[200px] h-auto rounded-tl-3xl mt-5 p-5 bg-white md:block md:w-[600px] md:h-auto rounded-tl-md:3xl md:mt-5 md:p-5 md:bg-white  ">
+
+<h1 class="text-xs text-black font-thin capitalize md:text-base md:text-black md:font-thin md:capitalize ">
+<%=client.detail%>
+
+</h1>
+</div>
+
+<div  class="mt-10 w-[200px] md:mt-10 md:w-[600px]  ">
+<button class="w-[100px] py-2 bg-black mt-5 text-white border-[1px]  rounded-lg md:w-[200px] md:py-2 md:bg-black md:mt-5 md:text-white md:border-[1px]  md:rounded-lg" type="submit">
+    <a href="/delete/<%=client.id%>">Delete</a>
+</button>
+
+<button class="w-[100px] py-2 bg-black mt-5  text-white border-[1px] rounded-lg md:w-[200px] md:py-2 md:bg-black md:mt-5 md:ml-4 md:text-white md:border-[1px] md:rounded-lg" type="submit">
+    <a href="/edit">Update</a>
+</button>
+    
+</div>
+</center>
+</div>
+
+
+    <% }) %>
+
+
+
+
+<!-- last -->
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../js/edit.js"></script>
+<script>
+    gsap.from("#contread",{
+        duration:2,
+        x:-200,
+        opacity:0,
+     
+       
+        scrollTrigger:{
+            trigger:"#contread",
+            scroller:"body",
+            
+            start:"top 50%"
+    
+        }
+        
+    
+    })
+
+    gsap.from("#contread div",{
+        duration:0.5,
+        y:-200,
+        opacity:0,
+      stagger:1,
+       
+        scrollTrigger:{
+            trigger:"#contread div",
+            scroller:"body",
+            
+            start:"top 50%"
+    
+        }
+        
+    
+    })
+
+</script>
+
+</body>
+</html>
