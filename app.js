@@ -22,7 +22,7 @@
 //     console.log("server is running.....");
     
 // })
-
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -31,6 +31,11 @@ const cookieparser = require("cookie-parser")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const axios = require("axios");
+const { default: mongoose } = require('mongoose');
+
+mongoose.connect("mongodb+srv://kuvarjigupta2004:MdHFTneDPLmjfDRf@cluster0.m1iqe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+.then(()=>console.log('mongoose connected'));
+
 
 
 
@@ -242,9 +247,9 @@ res.redirect("/read")
 })
 
 
-
+const PORT = process.env.PORT || 3000
 // listen server
-app.listen(3000,function () {
+app.listen(PORT,function () {
     console.log("server is run...");
     
 })
