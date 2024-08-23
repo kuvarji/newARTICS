@@ -57,62 +57,14 @@ w8.addEventListener("mouseover",function(){
    
 })
 
-let sign = document.getElementById("sign")
-let log = document.getElementById("log")
-let num = document.getElementById("num")
 
 
-if (num!=null) {
-    
-        log.style.display = "none";
-        sign.style.display = "none";
-    
-}
-else{
-    log.style.display = "block";
-    
-}
 
 
-let btn = document.getElementById("btn")
-let img = document.getElementById("img")
-let profil = document.getElementById("profile")
 
 
-btn.addEventListener("click", myFunction);
-
-function myFunction() {
-    profil.style.display = "block";
-   
-}
-let v = true
-
-img.addEventListener("click",function(){
-    profil.style.visibility = "hidden";
-    if (v) {
-        window.location.reload();
-    }
-    v= false
-})
-
-let ck = document.getElementById("ck")
-let bn = document.getElementById("bn")
-
-let z =true
-
-if(z){
-ck.style.display  = "hidden"
-bn.style.display  = "block"
-z = false
-}
-
-if(num!=null||z!=true){
-ck.style.display  = "block"
-bn.style.display = "none"
-}
 
 
-// gsap home.js
 
 
 

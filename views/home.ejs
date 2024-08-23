@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>ARTICS</title>
+
+<link rel="icon" type="favicon" href="../images/favicon.jpg">
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -12,6 +13,14 @@
 
 
 <style>
+    html ,body{
+    
+        width: 100%;
+        margin: 0%;
+        padding: 0%;
+        
+        
+    }
     #dv {
         -ms-overflow-style: none; /* for Internet Explorer, Edge */
         scrollbar-width: none; /* for Firefox */
@@ -22,7 +31,7 @@
       }
 </style>
 
-<body class="md:bg-gradient-to-r from-gray-900 via-black to-blue-500 bg-gradient-to-r from-gray-900 via-black to-blue-500 md:px-10  ">
+<body class="md:bg-gradient-to-r from-gray-900 via-black to-blue-500 bg-gradient-to-r from-gray-900 via-black to-blue-500 md:px-10 md:overflow-x-hidden overflow-x-hidden  ">
 
 <!-- main div -->
 <div id="contm" class="main  md:w-full md:h-auto  md:text-gray-800      m-0 md:m-0  w-full h-auto  text-gray-800   ">
@@ -31,7 +40,7 @@
 
     <!-- navbar div -->
 
- <div class="navbar  w-full h-[70px]  px-2 items-center flex justify-between relative  md:w-full md:h-[150px]   md:items-center md:flex md:justify-between md:relative  ">
+ <div class="navbar   w-full h-[70px] px-2 items-center flex justify-between  md:w-full md:h-[150px]   md:items-center md:flex md:justify-between   ">
 
     <div id="conta" class="logo flex   gap-2 items-center md:flex   md:gap-4 md:items-center ">
         <img class="rounded-full w-[25px] object-cover object-center h-[25px] md:rounded-full md:w-[50px] md:object-cover md:object-center md:h-[50px]" src="https://logopond.com/avatar/290451/NEWARTA.jpg" alt="" srcset="">
@@ -45,11 +54,11 @@
     </div>
     <div class=" flex gap-2 items-center md:flex md:gap-3 md:items-center">
         <div id="sign" class=" px-2 bg-white py-1 rounded-md md:block md:px-4 md:bg-white md:py-2 md:rounded-lg  ">
-            <a href="/signup">
+            <a href="tel:91+8303628539">
 
                 
-              <h1 class="text-xs font-semibold uppercase text-black md:text-base md:font-semibold md:uppercase md:text-black" id="log">
-                login
+              <h1 class="text-[8px] font-thin uppercase text-black md:text-base md:font-thin md:uppercase md:text-black" id="log">
+               <b>Contact</b> 
               </h1>
                 
           
@@ -59,65 +68,17 @@
         </div>
         <div class="border-[1px]  border-tb-[1px] py-2 md:border-[1px]  md:border-tb-[1px] md:py-4"></div>
         
-        <%user.forEach(function(user){ %>
-        <div class="contact  ">
-            
-          <button id="btn" onclick="myfunction()" class=" items-center w-[25px]      text-black bg-white rounded-full  md:items-center md:w-[50px] md:py-2     md:text-black md:bg-white md:rounded-full">
-  
-                <h1 id="num" class="text-md font-semibold uppercase md:text-xl md:font-semibold md:uppercase"><%=user.username.charAt(0)%></h1>
-  
-                 
-                </button>
-        </div>
+       
+     
 
-        <div id="profile" class="w-[150px] hidden border-[1px] backdrop-blur-md h-[200px] rounded-xl z-30 absolute top-8 px-2 py-2 left-[185px] md:w-[300px] md:hidden md:border-[1px] md:backdrop-blur-md md:h-[400px] md:rounded-3xl md:z-30 md:absolute md:top-14 md:px-2 md:py-2 md:left-[1130px]  ">
-            <img id="img" class="w-[20px] h-[20px]  absolute right-0  rounded-md md:w-[40px] md:h-[40px]  md:absolute md:right-0 md:rounded-xl " src="../images/—Pngtree—red cross symbol_5938373.png" alt="">
-
-            <!-- profile -->
-<div class="w-[125px] h-[25px] flex gap-2 md:w-[250px] md:h-[50px] md:flex md:gap-4 ">
- 
-    <div class="items-center w-[25px] px-2 py-1  border-[1px]    text-black bg-white rounded-full md:items-center md:w-[50px] md:px-4 md:py-2  md:border-2    md:text-black md:bg-white md:rounded-full">
-        <h1  class="text-xs font-semibold uppercase items-center md:text-xl md:font-semibold md:uppercase"><%=user.username.charAt(0)%></h1>
-    </div>
-
-            <div class="w-[90px] h-[25px] py-1 items-center bg-black rounded-sm md:w-[180px] md:h-[50px] md:py-2 md:items-center md:bg-black md:rounded-md">
-                <center>
-<h1 class="text-white font-thin text-[8px] capitalize md:text-white md:font-thin md:text-lg md:capitalize ">
-    <%=user.username%>
-</h1>
-</center>
-</div>
-<!--  -->
-</div>
 
 <!-- email -->
  
-        <div class="w-[120px] rounded-md ml-1 h-[25px] border-[1px] py-1  mt-5 md:w-[240px] md:rounded-md md:ml-2 md:h-[50px] md:border-[1px] md:py-2 md:mt-10">
-            <center>
-                <h1 class="text-white font-thin text-[7px] lowercase md:text-white md:font-thin md:text-base md:lowercase "><%=user.email%> </h1>
-            </center>
- </div>
- <div class="w-[120px] rounded-md ml-1 h-[25px] border-[1px] py-1  mt-5 md:w-[240px] md:rounded-md md:ml-2 md:h-[50px] md:border-[1px] md:py-2 md:mt-10">
-    <center>
-        <a href="/read">
-        <h1 class="text-white font-thin text-[7px] lowercase md:text-white md:font-thin md:text-base md:lowercase ">
-            YOUR ARTICLE </h1>
-    </a>
-    </center>
-</div>
-<div class="w-[120px] rounded-md ml-1 h-[25px] border-[1px] py-1  mt-5 md:w-[240px] md:rounded-md md:ml-2 md:h-[50px] md:border-[1px] md:py-2 md:mt-10">
-
-    <center>
-        <a href="/logout/<%=user.id%>">
-        <h1 class="text-white font-thin text-[7px] lowercase md:text-white md:font-thin md:text-base md:lowercase ">
-            logout </h1>
-    </a>
-    </center>
-
-</div>
+      
+ 
 
         </div>
-        <%})%>
+       
        
     </div>
 </div>
@@ -178,11 +139,11 @@ md:bg-white md:bg-opacity-20 md:w-full md:relative md:py-12 md:px-10 md:h-[250px
     <div id="contui" class="w-[120px] h-[30px] flex justify-center gap-2  items-center px-2   bg-white rounded-xl md:w-[200px] md:h-[60px] md:flex md:justify-between  md:items-center md:px-2 md:pr-12  md:bg-white rounded-3xl">
         <img class="rounded-full w-[25px] object-cover object-center h-[25px] rounded-full md:w-[50px] md:object-cover md:object-center md:h-[50px]" src="https://pics.craiyon.com/2023-07-05/fc5f288ac75d46d99a3cf1d77175504f.webp" alt="">
       <div  class=" whitespace-nowrap">
-        <%user.forEach(function(user){ %>
+        
         <h1 id="contuih" class="font-semibold text-[10px] capitalize md:font-semibold md:text-base md:capitalize  ">
-            <%=user.username%>
+           
         </h1>
-        <%})%>
+       
     </div>
     </div>
     <div id="contuid" class="  font-thin text-white mt-2 box-shadow-md  inline-block  md:font-thin md:text-white md:mt-5 md:box-shadow-md  md:inline-block  ">
@@ -425,47 +386,45 @@ Dr DOOM
 
 
 <div id="dv" class="flex flex-col  mt-4 justify-center items-center  gap-14    overflow-x-scroll md:flex md:flex-row md:items-center  md:mt-4 md:justify-between md:gap-14  md:mt-32  md:overflow-x-scroll  ">
-
-<% client.forEach(function(client){ %>
+<% if (clients && Array.isArray(clients)) { %>
+<% clients.forEach(function(clie){ %>
+    <div class="w-[300px] h-[500px] tracking-tight rounded-xl  hover:opacity-80 ">
+        <div class="overflow-hidden w-[300px] inline-block rounded-xl">
+            <img class="w-[300px] h-[250px] object-cover text-white capitalize font-thin text-base object-top"  src="<%=clie.url%>" alt =" image are not show because you are not enter correct url ">
+        </div>
     
-   <div class="w-[300px] h-[500px] tracking-tight rounded-xl  hover:opacity-80 ">
-            <div class="overflow-hidden w-[300px] inline-block rounded-xl">
-                <img class="w-[300px] h-[250px] object-cover text-white capitalize font-thin text-base object-top"  src="<%=client.url%>" alt =" image are not show because you are not enter correct url ">
-            </div>
+        <!-- heading -->
+    <div class="mt-2  px-4 w-[300px] h-[150px] overflow-hidden  ">
+        <h1 class="text-white text-md capitalize underline font-semibold"> <%=clie.bio%> </h1>
         
-            <!-- heading -->
-        <div class="mt-2  px-4 w-[300px] h-[150px] overflow-hidden  ">
-            <h1 class="text-white text-md capitalize underline font-semibold"> <%=client.bio%> </h1>
-            
-            <p class="text-xs font-thin text-white mt-2   ">
-                <%=client.detail%>
-            </p>
-        </div>
-            <div class="border-[1px] w-[300px] border-slate-400 mt-4 block "></div>
-           
-            <center>
-            <div class=" w-[200px] px-2 py-2 items-center flex gap-6 mt-4 rounded-2xl border-2 py-1" type="submit">
-                <a href="/read"> 
-                    <h1 class="text-base ml-4 text-slate-300 font-semibold block "> 
-                    Read More
-                </h1>
-            </a>
-
-            <a href="/delete/<%=client.id%>">
-                <h1 class="text-white text-base font-semibold block">
-                    Delete
-                </h1>
-            </a>
-        </div>
-        </center>
+        <p class="text-xs font-thin text-white mt-2   ">
+            <%=clie.detail%>
+        </p>
+    </div>
+        <div class="border-[1px] w-[300px] border-slate-400 mt-4 block "></div>
        
-        
-        </div>
+        <center>
+        <div class=" w-[200px] px-2 py-2 items-center flex gap-6 mt-4 rounded-2xl border-2 py-1" type="submit">
+            <a href="/read"> 
+                <h1 class="text-base ml-4 text-slate-300 font-semibold block "> 
+                Read More
+            </h1>
+        </a>
+
+        <a href="/delete/<%=clie.id%>">
+            <h1 class="text-white text-base font-semibold block">
+                Delete
+            </h1>
+        </a>
+    </div>
+    </center>
+   
     
+    </div>
+
 <% }) %>
-
+<% }  %>
 </div>
-
 </div>
 
 <!-- hogya -->
@@ -500,17 +459,11 @@ Dr DOOM
 
 <textarea class="w-[220px] outline-none h-[30px] py-12 px-4 rounded-lg  md:w-[400px] md:outline-none md:h-[30px] md:py-8 md:px-4 md:rounded-lg" placeholder="Enter about your topic" name="detail" id=""></textarea>
 
-<input id="ck" class="px-2 hidden hover:bg-black  shadow hover:shadow-xs  hover:shadow-slate-200 hover:text-white py-4 bg-white w-[220px] outline-none rounded-lg px-2 md:hidden md:hover:bg-black  md:shadow md:hover:shadow-xs  md:hover:shadow-slate-200 md:hover:text-white md:py-4 md:bg-white md:w-[400px] md:outline-none md:rounded-lg" type="submit" placeholder="Submit" value="Submit">
+<input id="ck" class="px-2  hover:bg-black  shadow hover:shadow-xs  hover:shadow-slate-200 hover:text-white py-4 bg-white w-[220px] outline-none rounded-lg px-2  md:hover:bg-black  md:shadow md:hover:shadow-xs  md:hover:shadow-slate-200 md:hover:text-white md:py-4 md:bg-white md:w-[400px] md:outline-none md:rounded-lg" type="submit" placeholder="Submit" value="Submit">
 </form>
 
 </div>
-<a id="bn" class="" href="/signup">
-<input  class="px-2  py-4 bg-white w-[220px] outline-none rounded-lg px-2  md:py-2 md:bg-white md:w-[400px] md:outline-none md:rounded-lg " type="submit"  value="Signin">
-  
-    
-  </a>  
-
-
+ 
 </center>
 </div>
 
@@ -890,7 +843,7 @@ gsap.from("#contrew",{
         trigger:"#contrew",
         scroller:"body",
         
-        start:"top 40%"
+        start:"top 60%"
 
     }
     
