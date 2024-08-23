@@ -29,7 +29,7 @@ if (user) return res.status(401).send("you have account please login")
                         email,
                         password:hash
                     })
-                    console.log(user);
+                    
                     
                let token = generateToken(user)
                   res.cookie("token",token)

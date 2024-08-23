@@ -51,7 +51,7 @@ router.post("/create", isLoggedin, async function(req,res){
                         bio,
                         detail
                     })
-                  console.log(u);
+                  
                   
                     res.redirect("/home")
                     
