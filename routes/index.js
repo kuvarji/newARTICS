@@ -4,7 +4,10 @@ const userModel = require("../models/user-model")
 const isLoggedin = require("../middleware/isLoggedin")
 const axios = require("axios")
 const { render } = require("ejs")
-
+const res = require("express/lib/response")
+const jwt = require("jsonwebtoken")
+const cookie = require("cookie-parser")
+const {generateToken} = require("../utils/generateToken.js")
 
 
 
@@ -154,6 +157,12 @@ res.redirect("/home")
 })
 
 
+router.get("/logout", async function(req, res){
+  let user = await userModel.user.find()
+  let token = generateToken(user)
+                  res.cookie("token","")
+                  res.redirect("/")
+})
  
 
 module.exports = router
