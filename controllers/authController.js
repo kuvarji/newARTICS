@@ -33,7 +33,9 @@ if (user) return res.status(401).send("you have account please login")
                     
                let token = generateToken(user)
                   res.cookie("token",token)
-                    alert("you can login")
+                 res.send(` <script>
+        alert('you can login');
+      </script>`)
                  res.redirect("/")
                 }
                
