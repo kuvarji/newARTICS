@@ -17,9 +17,20 @@
         <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-red-500">
             <span class="inline-block mt-1 mb-1 text-white">
                 <%= error %>
+              
             </span>
         </div>
         <% } %>
+
+        <% if(login.length>0){ %>
+            <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-red-500">
+                <span class="inline-block mt-1 mb-1 text-white">
+                    <%= login %>
+                  
+                </span>
+            </div>
+            <% } %>
+
             <div class="w-full h-auto md:w-screen md:h-screen md:flex md:px-44 md:gap-8 mt-10  ">
                 <div class="w-full md:w-1/2 flex items-center justify-center">
                     <div class="w-full px-10 ">

@@ -13,7 +13,8 @@ const {generateToken} = require("../utils/generateToken.js")
 
 router.get("/",function(req,res){
     let error = req.flash("error")
-    res.render("index",{ error })
+    let login = req.flash("login")
+    res.render("index",{ error,login:login})
 })
 
 
