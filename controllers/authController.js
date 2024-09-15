@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const cookie = require("cookie-parser")
 const {generateToken} = require("../utils/generateToken.js")
+const flash = require("connect-flash")
 
 
 module.exports.registeruser = 
