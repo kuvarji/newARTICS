@@ -11,7 +11,7 @@ const {generateToken} = require("../utils/generateToken.js")
 
 
 
-router.get("/",function(req,res){
+router.get("/LOG",function(req,res){
     let error = req.flash("error")
     let login = req.flash("login")
     res.render("index",{ error,login:login})
@@ -41,14 +41,14 @@ let   artic ;
   });
 
 
-  router.get("/home",isLoggedin, async function(req,res){
+  router.get("/", async function(req,res){
            let clients = await userModel.client.find()
           res.render("home",{artic,clients})
     })
 
 
 
-router.post("/create", isLoggedin, async function(req,res){
+router.post("/create",isLoggedin, async function(req,res){
     let { url , bio , detail} = req.body
      let u=  await userModel.client.create({
                         url,
@@ -57,7 +57,7 @@ router.post("/create", isLoggedin, async function(req,res){
                     })
                   
                   
-                    res.redirect("/home")
+                    res.redirect("/")
                     
         });
 
@@ -65,7 +65,7 @@ router.post("/create", isLoggedin, async function(req,res){
       
 
       
-router.get("/service",isLoggedin, function(req,res){
+router.get("/service", function(req,res){
     res.render("service")
 })
 
@@ -101,22 +101,22 @@ axios.get('https://api.currentsapi.services/v1/latest-news?',{
 });
 
 
-router.get("/all", isLoggedin,function(req,res){
+router.get("/all",function(req,res){
   res.render("all",{news:news,nex:nex,nex1:nex1,nex2:nex2,nex3:nex3})
  
 })
 
 
 
-router.get("/technology",isLoggedin,function(req,res){
+router.get("/technology",function(req,res){
   res.redirect("/all")
 })
 
-router.get("/sports",isLoggedin,function(req,res){
+router.get("/sports",function(req,res){
   res.redirect("/all")
 })
 
-router.get("/design",isLoggedin,function(req,res){
+router.get("/design",function(req,res){
   res.redirect("/all")
 })
 
@@ -124,12 +124,12 @@ router.get("/programming",isLoggedin,function(req,res){
   res.redirect("/all")
 })
 
-router.get("/engneering",isLoggedin,function(req,res){
+router.get("/engneering",function(req,res){
   res.redirect("/all")
 })
 
 
-router.get("/read", isLoggedin, async function(req,res){
+router.get("/read",  async function(req,res){
     
   let clients = await userModel.client.find()
   
@@ -139,21 +139,21 @@ router.get("/read", isLoggedin, async function(req,res){
 
 
 
-router.get("/edit",isLoggedin, async function(req,res){
+router.get("/edit", async function(req,res){
     let clients = await userModel.client.find()
     res.render("update",{clients})
   })
 
-  router.get("/delete/:id",isLoggedin, async function(req,res){
+  router.get("/delete/:id", async function(req,res){
     let delet = await userModel.client.findOneAndDelete({_id: req.params.id})
-    res.redirect("/home")
+    res.redirect("/")
 })
 
-router.post("/update/:id",isLoggedin, async function(req,res){
+router.post("/update/:id", async function(req,res){
   let {url,bio,detail} = req.body
   let update = await userModel.client.findOneAndUpdate({_id: req.params.id},{url,bio,detail},{new:true})
 
-res.redirect("/home")
+res.redirect("/")
 
 })
 

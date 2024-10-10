@@ -9,9 +9,7 @@ const {registeruser} = require("../controllers/authController")
 const {loginuser} = require("../controllers/authController")
 
 
-router.get("/", function(req ,res){
-    res.send("hello owner")
-})
+
 
 router.post("/register",registeruser )
 

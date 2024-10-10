@@ -36,7 +36,7 @@ if (user) return res.status(401).send("you have account please login")
                   res.cookie("token",token)
                   if (req.cookies.token) {
                     req.flash("login","you can login")
-                    return res.redirect("/")
+                    return res.redirect("/LOG")
                     
                 }
                 
@@ -57,7 +57,7 @@ res.send(err.message);
 
 }
 
-module.exports.loginuser= async function (req,res) {
+module.exports.loginuser  = async function (req,res) {
     let {email, pass} = req.body
    
    
@@ -70,7 +70,7 @@ module.exports.loginuser= async function (req,res) {
         if(result) {
             let token = generateToken(user)
             res.cookie("token",token)
-           res.redirect("/home")
+           res.redirect("/")
 
         }
         else{

@@ -5,7 +5,7 @@
     
         if (!req.cookies.token) {
             req.flash("error","you need to login first")
-            return res.redirect("/")
+            return res.redirect("/LOG")
             
         }
 
